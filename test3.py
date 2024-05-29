@@ -8,7 +8,6 @@ def discount(func):
             total_discount += discount
             with open('discount.txt', 'w') as f:
                 f.write(str(total_discount))
-                # f.write(f'{int(total_discount)}\n')
             return func(movie, price, True)
         else:
             return func(movie, price, False)
@@ -36,7 +35,7 @@ print('Введите фильм и цену или нажмите -е для в
 
 while True:
     answer = input()
-    if answer == 'e' or 'е':
+    if answer == 'e' or answer == 'е':
         break
     movie, price = answer.rsplit(maxsplit=1)
     price = int(price)
